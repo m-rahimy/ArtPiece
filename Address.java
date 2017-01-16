@@ -11,20 +11,20 @@ import android.support.annotation.Nullable;
 public class Address implements Parcelable {
 
     private int number;
-    private String valleyName;
+    private String alleyName;
     private String streetName;
     private String districtName;
     private String placeName;
     private String city;
 
     public Address(@Nullable int number,
-                   @Nullable String valleyName,
+                   @Nullable String alleyName,
                    @NonNull String streetName,
                    String districtName,
                    @NonNull String placeName,
                    @NonNull String city) {
         this.number = number;
-        this.valleyName = valleyName;
+        this.alleyName = alleyName;
         this.streetName = streetName;
         this.districtName = districtName;
         this.placeName = placeName;
@@ -33,7 +33,7 @@ public class Address implements Parcelable {
 
     protected Address(Parcel in) {
         number = in.readInt();
-        valleyName = in.readString();
+        alleyName = in.readString();
         streetName = in.readString();
         districtName = in.readString();
         placeName = in.readString();
@@ -60,7 +60,7 @@ public class Address implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(number);
-        parcel.writeString(valleyName);
+        parcel.writeString(alleyName);
         parcel.writeString(streetName);
         parcel.writeString(districtName);
         parcel.writeString(placeName);
@@ -71,7 +71,7 @@ public class Address implements Parcelable {
     public String toString() {
         return "Address : {" +
                 "number=" + number +
-                ", valleyName='" + valleyName + '\'' +
+                ", alleyName='" + alleyName + '\'' +
                 ", streetName='" + streetName + '\'' +
                 ", districtName='" + districtName + '\'' +
                 ", placeName='" + placeName + '\'' +
@@ -82,7 +82,7 @@ public class Address implements Parcelable {
     public String toJSON() {
         return "\"Address\": {" +
                 "\"number\":" + number +
-                "\", valleyName:\"" + valleyName + '\"' +
+                "\", alleyName:\"" + alleyName + '\"' +
                 "\", streetName:\"" + streetName + '\"' +
                 "\", districtName:\"" + districtName + '\"' +
                 "\", placeName=\"" + placeName + '\"' +
@@ -98,12 +98,12 @@ public class Address implements Parcelable {
         this.number = number;
     }
 
-    public String getValleyName() {
-        return valleyName;
+    public String getAlleyName() {
+        return alleyName;
     }
 
-    public void setValleyName(String valleyName) {
-        this.valleyName = valleyName;
+    public void setAlleyName(String alleyName) {
+        this.alleyName = alleyName;
     }
 
     public String getStreetName() {
