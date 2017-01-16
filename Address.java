@@ -1,43 +1,41 @@
-package ir.mrkgrahimy.tehranart.content;
+package ir.mrkgrahimy;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import java.io.Serializable;
-
 /**
  * Created by Mojtaba on 1/15/2017.
  */
 public class Address implements Parcelable {
 
-    private int pelak;
+    private int number;
     private String valleyName;
     private String streetName;
-    private String mahalleName;
+    private String districtName;
     private String placeName;
     private String city;
 
-    public Address(@Nullable int pelak,
+    public Address(@Nullable int number,
                    @Nullable String valleyName,
                    @NonNull String streetName,
-                   String mahalleName,
+                   String districtName,
                    @NonNull String placeName,
                    @NonNull String city) {
-        this.pelak = pelak;
+        this.number = number;
         this.valleyName = valleyName;
         this.streetName = streetName;
-        this.mahalleName = mahalleName;
+        this.districtName = districtName;
         this.placeName = placeName;
         this.city = city;
     }
 
     protected Address(Parcel in) {
-        pelak = in.readInt();
+        number = in.readInt();
         valleyName = in.readString();
         streetName = in.readString();
-        mahalleName = in.readString();
+        districtName = in.readString();
         placeName = in.readString();
         city = in.readString();
     }
@@ -61,10 +59,10 @@ public class Address implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(pelak);
+        parcel.writeInt(number);
         parcel.writeString(valleyName);
         parcel.writeString(streetName);
-        parcel.writeString(mahalleName);
+        parcel.writeString(districtName);
         parcel.writeString(placeName);
         parcel.writeString(city);
     }
@@ -72,10 +70,10 @@ public class Address implements Parcelable {
     @Override
     public String toString() {
         return "Address : {" +
-                "pelak=" + pelak +
+                "number=" + number +
                 ", valleyName='" + valleyName + '\'' +
                 ", streetName='" + streetName + '\'' +
-                ", mahalleName='" + mahalleName + '\'' +
+                ", districtName='" + districtName + '\'' +
                 ", placeName='" + placeName + '\'' +
                 ", city='" + city + '\'' +
                 '}';
@@ -83,21 +81,21 @@ public class Address implements Parcelable {
 
     public String toJSON() {
         return "\"Address\": {" +
-                "\"pelak\":" + pelak +
+                "\"number\":" + number +
                 "\", valleyName:\"" + valleyName + '\"' +
                 "\", streetName:\"" + streetName + '\"' +
-                "\", mahalleName:\"" + mahalleName + '\"' +
+                "\", districtName:\"" + districtName + '\"' +
                 "\", placeName=\"" + placeName + '\"' +
                 "\", city=\"" + city + '\"' +
                 "\"}";
     }
 
-    public int getPelak() {
-        return pelak;
+    public int getNumber() {
+        return number;
     }
 
-    public void setPelak(int pelak) {
-        this.pelak = pelak;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getValleyName() {
@@ -116,12 +114,12 @@ public class Address implements Parcelable {
         this.streetName = streetName;
     }
 
-    public String getMahalleName() {
-        return mahalleName;
+    public String getDistrictName() {
+        return districtName;
     }
 
-    public void setMahalleName(String mahalleName) {
-        this.mahalleName = mahalleName;
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
     }
 
     public String getPlaceName() {
