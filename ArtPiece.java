@@ -1,4 +1,4 @@
-package ir.mrkgrahimy.tehranart.content;
+package ir.mrkgrahimy;
 
 
 import android.os.Parcel;
