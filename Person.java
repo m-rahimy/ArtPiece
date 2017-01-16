@@ -1,4 +1,4 @@
-package ir.mrkgrahimy.tehranart.content;
+package ir.mrkgrahimy;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,18 +12,18 @@ import java.util.Date;
  * Created by Mojtaba on 1/15/2017.
  */
 public abstract class Person implements Parcelable {
-    String fname, lname , birthPlace, nationality, profession;
+    String firstName, lastName, birthPlace, nationality, profession;
     char gender;
     Date birthday;
 
-    protected Person(@NonNull String fname, @NonNull String lname,
+    protected Person(@NonNull String firstName, @NonNull String lastName,
                   @Nullable String birthPlace,
                   @Nullable String nationality,
                   @Nullable String profession,
                   char gender,
                   @Nullable Date birthday) {
-        this.fname = fname;
-        this.lname = lname;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.birthPlace = birthPlace;
         this.nationality = nationality;
         this.profession = profession;
@@ -32,8 +32,8 @@ public abstract class Person implements Parcelable {
     }
 
     protected Person(Parcel in){
-        this.fname = in.readString();
-        this.lname = in.readString();
+        this.firstName = in.readString();
+        this.lastName = in.readString();
         this.birthPlace = in.readString();
         this.nationality = in.readString();
         this.profession = in.readString();
@@ -41,8 +41,8 @@ public abstract class Person implements Parcelable {
         this.birthday = new Date(Long.valueOf(in.readString()));
     }
     public void writeToParcel(Parcel out, int flags) {
-        out.writeString(fname);
-        out.writeString(lname);
+        out.writeString(firstName);
+        out.writeString(lastName);
         out.writeString(birthPlace);
         out.writeString(nationality);
         out.writeString(profession);
@@ -54,8 +54,8 @@ public abstract class Person implements Parcelable {
     @Override
     public String toString() {
         return "Person{" +
-                "fname='" + fname + '\'' +
-                ", lname='" + lname + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", birthPlace='" + birthPlace + '\'' +
                 ", nationality='" + nationality + '\'' +
                 ", profession='" + profession + '\'' +
@@ -65,20 +65,20 @@ public abstract class Person implements Parcelable {
     }
 
 
-    public String getFname() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLname() {
-        return lname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLname(String lname) {
-        this.lname = lname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getBirthPlace() {
